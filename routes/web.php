@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\EstudianteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,11 @@ Route::controller(CursoController::class)->group(function () {
 
     Route::get('cursos', 'index');
     Route::get('cursos/create', 'create');
-    Route::get('cursos/{curso}', 'detail');
+    Route::get('cursos/{curso}', 'show');
+});
+
+Route::controller(EstudianteController::class)->group(function () {
+    Route::get('estudiantes','index');
+    Route::get('estudiantes/create','create');
+    Route::get('estudiantes/{id}','show');
 });

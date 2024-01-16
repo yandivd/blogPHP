@@ -14,7 +14,7 @@ class CursoController extends Controller
         return "Aqui se crea un curso";
     }
 
-    public function detail($curso){
+    public function show($curso){
         return "detalles del curso $curso";
     }
 }
