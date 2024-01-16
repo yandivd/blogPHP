@@ -18,6 +18,17 @@ class CursoController extends Controller
 
         $primer_curso = Curso::where('category','Diseño Web')->first();
 
+        //obtener un curso especifico
+        $curso_per_id = Curso::find(5);
+
+        //obtener solo el nombre de todos los cursos
+        $cursos_solo_name = Curso::select('name as title','category')->orderBy('id','desc')->where('category','Diseño Web')->take(5)->get();
+
+        $cursos_mayores = Curso::where('id','>','45')->orderBy('id','desc')->get();
+
+        //cursos q contienen una palabra
+        $cursos_contienen_palabra = Curso::where('name','like','% Manolo %')->get();
+
         //Recorrer todos los usuarios e incrementar un contador por cada uno de ellos
         for ($i = 0; $i < count($users); $i++){
             //Imprimir el usuario en cuestion
@@ -28,7 +39,7 @@ class CursoController extends Controller
             // print($contador);
         }
         //Retornar el array de usuarios
-        return $primer_curso;
+        return $cursos_mayores;
     }
 
     public function create(){
