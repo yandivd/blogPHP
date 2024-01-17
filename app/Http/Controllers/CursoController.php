@@ -43,10 +43,10 @@ class CursoController extends Controller
     }
 
     public function create(){
-        return "Aqui se crea un curso";
+        return view('cursos.create');
     }
 
     public function show($curso){
-        return "detalles del curso $curso";
+        return view('cursos.show',['a' => $curso]);
     }
 }
