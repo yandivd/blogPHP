@@ -39,7 +39,9 @@ class CursoController extends Controller
             // print($contador);
         }
         //Retornar el array de usuarios 
-        return view('cursos.index');
+        $cursos_a_mostrar = Curso::paginate();
+        // return $cursos_a_mostrar;
+        return view('cursos.index', compact('cursos_a_mostrar'));
     }
 
     public function create(){
