@@ -38,8 +38,8 @@ class CursoController extends Controller
             //Imprimir el valor del contador
             // print($contador);
         }
-        //Retornar el array de usuarios
-        return $cursos_mayores;
+        //Retornar el array de usuarios 
+        return view('cursos.index');
     }
 
     public function create(){
